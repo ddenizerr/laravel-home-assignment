@@ -38,38 +38,38 @@
 
     </style>
 </head>
-<body class="background-image d-flex justify-content-center align-items-center">
-<div class="container" style="padding: 10rem">
-    <div class="col-xl-12 col-xs-12">
-        <div class="row">
-            <div class="col-xl-12 col-xs-12">
-                <div class="card" style="border-radius: 15px;" style="background: linear-gradient(45deg,#6b7280, #e2e8f0) !important;">
-                    <div class="card-body col-lg-12 p-5 col-xs-12">
-                        <div class="row d-flex justify-content-center align-items-center ">
-                            <div class="col-md-6 col-xs-6">
-                                <h3> Have a thought? </h3>
-                                <br>
-                                <h4> Feel free to share with us!</h4>
-                            </div>
-                            <div class="col-lg-6 col-xs-6">
-                                <form class="row g-3">
-                                    <div class="col-md-12 col-xs-12">
-                                        <label for="validationServer01"
-                                               class="form-label  @error('title') is-invalid @enderror">Email</label>
-                                        <input type="text" class="form-control" id="validationServer01" value="Mark"
-                                               required>
-                                    </div>
-                                    <div class="col-md-12 col-xs-12">
-                                        <label for="validationServer02"
-                                               class="form-label  @error('title') is-invalid @enderror">Comment</label>
-                                        <textarea type="textarea" class="form-control " id="validationServer02"
-                                                  value="Otto" required></textarea>
-                                    </div>
-                                    <div class="col-12 col-xs-12 heart text-center">
-                                        <button class="btn" style="background-color: #69a6a6; color: aliceblue" type="submit">Submit</button>
-                                    </div>
-                                </form>
-                            </div>
+<body class="background-image">
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="row h-100">
+        <div class="col-xl-12 col-xs-12" style="padding-top: 18rem">
+            <div class="card card-block" style="border-radius: 15px;">
+                <div class="card-body col-lg-12 p-5 col-xs-12">
+                    <div class="row d-flex justify-content-center align-items-center ">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <h3 class="text-center"> Have a thought? </h3>
+                            <br>
+                            <h4 class="text-center"> Feel free to share with us!</h4>
+                        </div>
+                        <div class="col-lg-6 col-xs-6 mt-1">
+                            <form class="row g-3">
+                                <div class="col-md-12 col-xs-12">
+                                    <label for="email"
+                                           class="form-label  @error('title') is-invalid @enderror">Email</label>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="dear@customer.com"
+                                           required>
+                                </div>
+                                <div class="col-md-12 col-xs-12">
+                                    <label for="comment"
+                                           class="form-label  @error('title') is-invalid @enderror">Comment</label>
+                                    <textarea type="textarea" class="form-control" name="comment" id="comment"
+                                              required>Your honest comment here!</textarea>
+                                </div>
+                                <div class="col-12 col-xs-12 heart text-center">
+                                    <button class="btn" style="background-color: #69a6a6; color: aliceblue"
+                                            type="submit">Submit
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
