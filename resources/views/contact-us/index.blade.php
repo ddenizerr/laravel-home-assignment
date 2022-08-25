@@ -55,6 +55,18 @@
                                 <form action="{{ route('store') }}" method="POST" class="row g-3">
                                     @csrf
                                     <div class="col-md-12 col-xs-12">
+                                        <label for="name"
+                                               class="form-label">Name</label>
+                                        <input type="text" class="form-control  @error('name') is-invalid @enderror"
+                                               name="name" id="name" placeholder="Rae Row">
+                                        @error('email')
+                                        <div id="name" class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+
+                                    </div>
+                                    <div class="col-md-12 col-xs-12">
                                         <label for="email"
                                                class="form-label">Email</label>
                                         <input type="email" class="form-control  @error('email') is-invalid @enderror"
@@ -90,7 +102,7 @@
                             <div class="col-lg-6 col-xs-6 mt-1">
                                 <h3 class="text-center"> Thank you! </h3>
                                 <br>
-                                <h4 class="text-center"> We will get in touch soon!</h4>
+                                <h4 class="text-center"> We will get in touch soon.</h4>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-6 text-center">
                                 <img src="{{url('images/thankyou.png')}}" style="width: 100%" alt="thank you image">

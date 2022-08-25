@@ -24,7 +24,8 @@ class StoreFormRequest extends FormRequest
     {
         return [
             'comment' => 'required|max:600',
-            'email' => 'required'
+            'email' => 'required',
+            'name' => 'required'
         ];
     }
 
@@ -34,6 +35,7 @@ class StoreFormRequest extends FormRequest
             'comment.required'=>'We need your comment. Please feel free to type here!',
             'comment.max'=>'We have a max level of 600 characters. If possible please summarize so we can help you better.',
             'email.required'=>'Email field is there for a reason!',
+            'name.required'=>'Can you give me your name please.',
         ];
     }
 }
