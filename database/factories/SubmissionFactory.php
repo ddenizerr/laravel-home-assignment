@@ -23,6 +23,7 @@ class SubmissionFactory extends Factory
         return [
             'email'=> $this->faker->email(),
             'comment' => $this->faker->sentence(),
+            'name' => $this->faker->name(),
         ];
     }
 }
