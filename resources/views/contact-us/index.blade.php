@@ -38,10 +38,10 @@
 
     </style>
 </head>
-<body class="background-image  d-flex justify-content-center align-items-center">
-<div class="container">
+<body class="background-image">
+<div class="container" style="padding-top: 15rem">
     <div class="row h-100">
-        <div class="col-xl-12 col-xs-12" style="padding-top: 18rem">
+        <div class="col-xl-12 col-xs-12">
             <div class="card card-block" style="border-radius: 15px;">
                 <div class="card-body col-lg-12 p-5 col-xs-12">
                     <div class="row d-flex justify-content-center align-items-center ">
