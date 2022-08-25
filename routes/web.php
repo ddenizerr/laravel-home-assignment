@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contact-us', function (){
-    return view('contact-us.index');
-});
+Route::get('/contact-us', [FormController::class,'index']);
+Route::post('/contact-us/save', [FormController::class,'store'])->name('store');

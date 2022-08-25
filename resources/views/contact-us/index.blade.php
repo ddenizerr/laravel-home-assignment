@@ -39,38 +39,64 @@
     </style>
 </head>
 <body class="background-image">
-<div class="container d-flex justify-content-center align-items-center">
+<div class="container" style="padding-top: 15rem">
     <div class="row h-100">
-        <div class="col-xl-12 col-xs-12" style="padding-top: 18rem">
+        <div class="col-xl-12 col-xs-12">
             <div class="card card-block" style="border-radius: 15px;">
                 <div class="card-body col-lg-12 p-5 col-xs-12">
                     <div class="row d-flex justify-content-center align-items-center ">
-                        <div class="col-md-6 col-sm-6 col-xs-6">
-                            <h3 class="text-center"> Have a thought? </h3>
-                            <br>
-                            <h4 class="text-center"> Feel free to share with us!</h4>
-                        </div>
-                        <div class="col-lg-6 col-xs-6 mt-1">
-                            <form class="row g-3">
-                                <div class="col-md-12 col-xs-12">
-                                    <label for="email"
-                                           class="form-label  @error('title') is-invalid @enderror">Email</label>
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="dear@customer.com"
-                                           required>
-                                </div>
-                                <div class="col-md-12 col-xs-12">
-                                    <label for="comment"
-                                           class="form-label  @error('title') is-invalid @enderror">Comment</label>
-                                    <textarea type="textarea" class="form-control" name="comment" id="comment"
-                                              required>Your honest comment here!</textarea>
-                                </div>
-                                <div class="col-12 col-xs-12 heart text-center">
-                                    <button class="btn" style="background-color: #69a6a6; color: aliceblue"
-                                            type="submit">Submit
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                        @if(!session('success'))
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <h3 class="text-center"> Looking for us? </h3>
+                                <br>
+                                <h4 class="text-center"> Feel free to send us a message!</h4>
+                            </div>
+                            <div class="col-lg-6 col-xs-6 mt-1">
+                                <form action="{{ route('store') }}" method="POST" class="row g-3">
+                                    @csrf
+                                    <div class="col-md-12 col-xs-12">
+                                        <label for="email"
+                                               class="form-label">Email</label>
+                                        <input type="email" class="form-control  @error('email') is-invalid @enderror"
+                                               name="email" id="email" placeholder="dear@customer.com">
+                                        @error('email')
+                                        <div id="email" class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+
+                                    </div>
+                                    <div class="col-md-12 col-xs-12">
+                                        <label for="comment"
+                                               class="form-label ">Comment</label>
+                                        <textarea type="textarea"
+                                                  class="form-control @error('comment') is-invalid @enderror"
+                                                  name="comment" id="comment"></textarea>
+                                        @error('comment')
+                                        <div id="comment" class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+                                    </div>
+                                    <div class="col-12 col-xs-12 heart text-center">
+                                        <button class="btn" style="background-color: #6cafaf; color: aliceblue"
+                                                type="submit">Submit
+                                        </button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        @elseif(session('success'))
+                            <div class="col-lg-6 col-xs-6 mt-1">
+                                <h3 class="text-center"> Thank you! </h3>
+                                <br>
+                                <h4 class="text-center"> We will get in touch soon!</h4>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6 text-center">
+                                <img src="{{url('images/thankyou.png')}}" style="width: 100%" alt="thank you image">
+                                <small><a style="text-decoration: none; color: burlywood" href="https://storyset.com/people">People illustrations by Storyset</a></small>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
